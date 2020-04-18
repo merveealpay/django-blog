@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block body %}
+
+{# {% url 'detail' id=post.id %} #}
+
+        {% for post in posts %}
+           id: {{ post.id }} <br>
+            <a href="{{ post.get_absolute_url }}" >{{ post.title }}</a> <br>
+            {{ post.content }} <br>
+            {{ post.published_date }} <br>
+        {% endfor %}
+
+{% endblock %}
